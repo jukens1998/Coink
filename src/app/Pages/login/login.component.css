@@ -1,0 +1,102 @@
+.container-fluid {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #004B40 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+#help {
+    margin: 1rem;
+    text-align: left;
+    font: normal normal normal 14px/23px AvenirNextLTPro-Regular;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+/* ------------- header ---------------*/
+
+header {
+    height: 5vh;
+}
+
+/* ------------- Content ---------------*/
+
+#content {
+    height: 90vh;
+}
+
+#content #login {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 3px solid #1EEB00;
+    opacity: 1;
+}
+
+#content h1 {
+    text-align: center;
+    font: normal normal bold 20px/23px Montserrat-Bold;
+    letter-spacing: -0.26px;
+    color: #004B40;
+}
+
+form{
+    padding-bottom: 2rem;
+}
+.form-group {
+    margin: 1rem 20%;
+}
+
+.form-group input {
+  
+    width: 100%;
+    font: normal normal normal 14px/28px AvenirNextLTPro-Regular;
+    letter-spacing: 0px;
+    color: #9F9F9F;
+    border: none;
+    border-bottom: 1px solid #707070;
+    margin-bottom: 1rem;
+}
+
+#btnSubmit {
+    display: block;
+    background: #1EEB00 0% 0% no-repeat padding-box;
+    border-radius: 24px;
+    text-align: center;
+    font: normal normal bold 14px/13px Montserrat-Bold;
+    letter-spacing: 0px;
+    color: #004B40;
+    text-transform: uppercase;    
+    padding: 0.8rem 2rem;
+    border: none;
+    margin: 1rem 20%;
+}
+
+.forgot {
+    text-align: left;
+    text-decoration: underline;
+    font: normal normal normal 12px/28px AvenirNextLTPro-Regular;
+    letter-spacing: 0px;
+    color: #4D4D4D;
+    margin-left: 20%;
+}
+
+/* ------------- Footer ---------------*/
+
+footer {
+    background: #1EEB00 0% 0% no-repeat padding-box;
+    height: 5vh;
+    width: 100vw;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+footer .row .col p {
+    margin: 1rem 1rem 0 0;
+    text-align: right;
+    font: normal normal normal 14px/13px Avenir Next LT Pro;
+    letter-spacing: 0px;
+    color: #004B40;
+}

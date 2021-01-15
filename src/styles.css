@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "AvenirNextLTPro-Regular";
+    src: url("./assets/Fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.otf");
+  }
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("./assets/Fonts/Montserrat/Montserrat-Bold.ttf");
+}
