@@ -1,0 +1,57 @@
+.container-fluid {
+    margin: 0;
+    height: 94vh;
+    width: 100vw;
+}
+
+header {
+    height: 6vh;
+    background: #004B40 0% 0% no-repeat padding-box;
+}
+
+aside h1 {
+    margin-top: 1rem;
+    font: normal normal bold 32px/39px Montserrat-Bold;
+    letter-spacing: 0px;
+    color: #5D5D5D;
+}
+
+#content {
+    overflow-y: scroll;
+}
+
+#content h1 {
+    margin-top: 1rem;
+    font: normal normal bold 32px/39px Montserrat-Bold;
+    letter-spacing: 0px;
+    color: #1EEB00;
+    text-transform: uppercase;
+}
+
+aside ul {
+    margin-top: 118px;
+}
+
+aside ul li {
+    height: 52px;
+}
+
+.form-control {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #707070;
+}
+
+#clean {
+    background-color: #004B40;
+    color: white;
+}
+#search{
+    background-color: #1EEB00;
+    color: white;
+}
+
+table thead th{
+    font: normal normal bold 16px/19px Montserrat-Bold;
+    color: #004B40;
+} 

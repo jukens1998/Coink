@@ -1,0 +1,74 @@
+<header>
+
+</header>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-12 col-lg-2">
+            <aside>
+                <h1 class="text-center">Menu</h1>
+                <ul class="list-group ">
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                </ul>
+            </aside>
+
+        </div>
+        <div id="content" class="col-md-12 col-lg-10">
+            <h1>Consultas - COMPRAS Con el cofre</h1>
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-2">
+                        <input type="date" class="form-control">
+                        <select class="form-control" name="" id="">
+                            <option value="nombre">test</option>
+                            <option value="cel">test</option>
+                            <option value="email">test</option>
+                            <option value="fechaCompra">test</option>
+                            <option value="edad">test</option>
+                        </select>
+                    </div>
+                    <div class="col-8 ">
+                        <input type="text" class="form-control" placeholder="buscar">
+                    </div>
+                    <div class="col-2">
+                        <button id="clean" class="btn btn-block">Limpiar filtros</button>
+                        <button id="search" class="btn btn-block">Buscar</button>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let purchase of data;index as index">
+                                    <th scope="row">{{index+1}}</th>
+                                    <td>{{purchase.nombre}}</td>
+                                    <td>{{purchase.apellido}}</td>
+                                    <td>@{{purchase.edad}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <!--Pagination ngx para la paginación-->
+                        <button id="clean" class="btn ">Descargar Excel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
