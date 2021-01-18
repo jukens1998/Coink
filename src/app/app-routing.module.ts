@@ -7,15 +7,16 @@ import { LoginComponent } from './Pages/login/login.component';
 import { PurchasesComponent } from './Pages/purchases/purchases.component';
 
 const routes: Routes = [
-  { path: '**', redirectTo: 'login', pathMatch: 'full' },
+
   {
     path: 'Coink', component: LoginComponent, children:
       [
-        { path: 'Login', component: SecureLoginComponent },
+        { path: 'login', component: SecureLoginComponent },
         { path: 'secureCode', component: SecureCodeComponent },
       ]
   },
-  { path: 'purchases', component: PurchasesComponent},
+  { path: 'purchases', component: PurchasesComponent },
+  { path: '**', redirectTo: 'Coink/login', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -1,17 +1,22 @@
 <div id="login" class=" mt-3">
 
     <h1>Ingresa a tú cuenta</h1>
-    <form action="">
+    <form [formGroup]="formulario" (ngSubmit)="login()">
 
         <div class="form-group ">
-            <input type="text" class="" placeholder="Usuario">
-
+            <input type="text" placeholder="Usuario" formControlName="usuario">
+            <small *ngIf="nombreNovalido" class="text-danger ">
+                Algo anda mal con tu usuario
+            </small>
         </div>
         <div class="form-group">
-            <input type="password" class="" placeholder="Contraseña">
+            <input type="password" placeholder="Contraseña" formControlName="contrasena">
+            <small *ngIf="contrasenaNovalido" class="text-danger">
+                Algo anda mal con tu contraseña
+            </small>
         </div>
 
-        <button type="submit" (click)="onSubmit()" id="btnSubmit" class="text-left">Ingresar</button>
+        <button type="submit" [routerLink]="['/crisis-center']" id="btnSubmit" class="text-left">Ingresar</button>
         <a href="">
             <h3 class="text-left forgot">Olvide mi Pin</h3>
         </a>

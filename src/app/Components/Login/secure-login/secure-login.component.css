@@ -54,3 +54,7 @@ form{
     color: #4D4D4D;
     margin-left: 20%;
 }
+
+small{
+    font: bold bold bold 12px/28px AvenirNextLTPro-Regular;
+}

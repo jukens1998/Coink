@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +9,35 @@ import { Router } from '@angular/router';
 })
 export class SecureLoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  formulario: FormGroup;
+
+
+
+  constructor(private router: Router, private fb: FormBuilder) { this.createForm() }
   ngOnInit(): void {
   }
-  public onSubmit() {
-    this.router.navigateByUrl('Coink/secureCode');
 
+
+  /*------------------- Create Form ------------ */
+  createForm() {
+    this.formulario = this.fb.group({
+      usuario: ['', Validators.required],
+      contrasena: ['', Validators.required]
+    });
   }
+
+  /*------------------- Login ------------ */
+
+  public login() {
+   
+    this.router.navigate(['Coink/secureCode']);
+  }
+  /*------------------- Visual Validators ------------ */
+  get nombreNovalido() {
+    return this.formulario.get('usuario').invalid && this.formulario.get('usuario').touched;
+  }
+  get contrasenaNovalido() {
+    return this.formulario.get('contrasena').invalid && this.formulario.get('contrasena').touched;
+  }
+
 }

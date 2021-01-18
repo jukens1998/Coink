@@ -7,6 +7,7 @@ import { LoginComponent } from './Pages/login/login.component';
 import { SecureLoginComponent } from './Components/Login/secure-login/secure-login.component';
 import { SecureCodeComponent } from './Components/Login/secure-code/secure-code.component';
 import { PurchasesComponent } from './Pages/purchases/purchases.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { PurchasesComponent } from './Pages/purchases/purchases.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
