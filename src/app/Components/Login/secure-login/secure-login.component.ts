@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Form, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/Auth/auth.service';
 
 @Component({
   selector: 'app-secure-login',
@@ -13,7 +14,7 @@ export class SecureLoginComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private fb: FormBuilder) { this.createForm() }
+  constructor(private router: Router, private fb: FormBuilder, private auth: AuthService) { this.createForm() }
   ngOnInit(): void {
   }
 
@@ -28,8 +29,10 @@ export class SecureLoginComponent implements OnInit {
 
   /*------------------- Login ------------ */
 
-  public login() {
-   
+  public login(form: NgForm) {
+    if (form.invalid) { return; }
+
+    this.auth.login(this.formulario.get('usuario').value, this.formulario.get('contrasena').value);
     this.router.navigate(['Coink/secureCode']);
   }
   /*------------------- Visual Validators ------------ */

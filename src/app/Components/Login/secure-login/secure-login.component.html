@@ -1,7 +1,7 @@
 <div id="login" class=" mt-3">
 
     <h1>Ingresa a tú cuenta</h1>
-    <form [formGroup]="formulario" (ngSubmit)="login()">
+    <form [formGroup]="formulario" (ngSubmit)="login(form)" #form="ngForm">
 
         <div class="form-group ">
             <input type="text" placeholder="Usuario" formControlName="usuario">

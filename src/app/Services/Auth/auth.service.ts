@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from "rxjs/operators";
 import { CryptoService } from '../CryptoService/crypto.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
   userToken: string;
   expiresAt: string;
 
-  constructor(private http: HttpClient, private cryptoService: CryptoService) {
+  constructor(private http: HttpClient, private cryptoService: CryptoService, private router: Router,) {
 
   }
 
@@ -25,13 +26,23 @@ export class AuthService {
       'user_password': ''
     };
     let data = JSON.stringify(Credentials);
+
     const authData = this.cryptoService.encrypt(data);
+
+    const opts = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + this.readToken(),
+      })
+    };
     return this.http.post(
-      `${this.url}/login`,
-      authData
+      `${this.url}/login?apiKey=252156`,
+      authData, opts
     ).pipe(
       map(resp => {
-        this.saveToken(resp['access_token'], resp['expires_at']);
+        this.saveToken(resp['access_token']);
+
+        // redirect when the http reques is succesful
+        // this.router.navigate(['Coink/secureCode']);
         return resp;
       })
     );
@@ -39,11 +50,9 @@ export class AuthService {
   }
 
   // SAVETOKEN*************************************
-  private saveToken(idToken: string, expiresAt: string) {
+  private saveToken(idToken: string) {
     this.userToken = idToken;
     localStorage.setItem('token', idToken);
-    let today = new Date(expiresAt);
-    localStorage.setItem("expires", today.getTime().toString());
   }
 
   // READTOKEN*************************************
@@ -62,7 +71,7 @@ export class AuthService {
     localStorage.removeItem('token');
     localStorage.removeItem('expires');
   }
-  
+
   authenticated(): boolean {
     if (this.userToken.length < 2) {
       return false;
