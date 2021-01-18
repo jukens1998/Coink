@@ -1,9 +1,5 @@
 .container-fluid {
     margin: 0;
-    height: 100vh;
-    width: 100vw;
-    background: #004B40 0% 0% no-repeat padding-box;
-    opacity: 1;
 }
 
 #help {
@@ -24,11 +20,11 @@ header {
 /* ------------- Content ---------------*/
 
 #content {
-    height: 90vh;
+    height: 90%;
 }
 
 #linkEnterprise {
-    margin-top: 10vh;
+    margin: 5vh 0px 8vh;
     text-decoration: underline;
     font: normal normal normal 14px/23px AvenirNextLTPro-Regular;
     letter-spacing: 0px;
@@ -55,3 +51,14 @@ footer .row .col p {
     letter-spacing: 0px;
     color: #004B40;
 }
+#responsiveBox{
+    height: 95%;
+}
+.container-fluid:before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 1000px;
+    top: -1000px;
+    background-color: tomato;
+  }

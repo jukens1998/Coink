@@ -4,11 +4,12 @@
     </picture>
     <h1>Ingreso seguro</h1>
     <h2>Un código de verificacion fue enviado a tu correo, porfavor introdúcelo.</h2>
-    <form>
+    <form [formGroup]="formulario" (ngSubmit)="secureCode()">
         <div class="form-group ">
-            <input type="text" class="" placeholder="Ingresa tu código de verificación">
+            <input type="text" class="" placeholder="Ingresa tu código de verificación" formControlName="codigo">
+            <small *ngIf="codigoNovalido" class="mb-2 text-danger">algo anda mal con el codigo de verificación, por
+                favor verificalo</small>
         </div>
-
-        <button  (click)="onSubmit()" id="btnSubmit" class="text-left">ENTRAR</button>
+        <button id="btnSubmit" class="text-left">ENTRAR</button>
     </form>
 </div>

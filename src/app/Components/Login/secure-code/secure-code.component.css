@@ -38,7 +38,6 @@ form {
 }
 
 #btnSubmit {
-  
     background: #1EEB00 0% 0% no-repeat padding-box;
     border-radius: 24px;
     text-align: center;
@@ -48,7 +47,6 @@ form {
     text-transform: uppercase;
     padding: 0.8rem 2.3rem;
     border: none;
-    
 }
 
 .forgot {
@@ -58,4 +56,9 @@ form {
     letter-spacing: 0px;
     color: #4D4D4D;
     margin-left: 20%;
+}
+
+
+small{
+    font: normal normal normal 12px/28px AvenirNextLTPro-Regular;
 }

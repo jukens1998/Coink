@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-purchases',
@@ -13,12 +13,13 @@ export class PurchasesComponent implements OnInit {
     'apellido': 'perez',
     'edad': 2
   }
-  constructor() { }
-
+  constructor(private elementRef: ElementRef) { }
   ngOnInit(): void {
     this.setData();
   }
-
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'white';
+  }
   private setData() {
     for (let i = 0; i < 10; i++) {
       this.data.push(this.element);
