@@ -28,15 +28,9 @@ export class AuthService {
     let data = JSON.stringify(Credentials);
 
     const authData = this.cryptoService.encrypt(data);
-
-    const opts = {
-      headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + this.readToken(),
-      })
-    };
     return this.https.post(
       `${this.url}/login?apiKey=252156`,
-      authData, opts
+      authData
     ).pipe(
       map(resp => {
         this.saveToken(resp['access_token']);
