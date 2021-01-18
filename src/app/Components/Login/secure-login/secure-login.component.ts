@@ -32,7 +32,7 @@ export class SecureLoginComponent implements OnInit {
   public login(form: NgForm) {
     if (form.invalid) { return; }
 
-    this.auth.login(this.formulario.get('usuario').value, this.formulario.get('contrasena').value);
+    // this.auth.login(this.formulario.get('usuario').value, this.formulario.get('contrasena').value);
     this.router.navigate(['Coink/secureCode']);
   }
   /*------------------- Visual Validators ------------ */

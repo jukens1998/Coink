@@ -14,7 +14,7 @@ export class AuthService {
   userToken: string;
   expiresAt: string;
 
-  constructor(private http: HttpClient, private cryptoService: CryptoService, private router: Router,) {
+  constructor( private cryptoService: CryptoService, private router: Router,private https: HttpClient) {
 
   }
 
@@ -34,7 +34,7 @@ export class AuthService {
         'Authorization': 'Bearer ' + this.readToken(),
       })
     };
-    return this.http.post(
+    return this.https.post(
       `${this.url}/login?apiKey=252156`,
       authData, opts
     ).pipe(

@@ -15,6 +15,7 @@ const routes: Routes = [
         { path: 'secureCode', component: SecureCodeComponent },
       ]
   },
+
   { path: 'purchases', component: PurchasesComponent },
   { path: '**', redirectTo: 'Coink/login', pathMatch: 'full' },
 ];

@@ -8,6 +8,8 @@ import { SecureLoginComponent } from './Components/Login/secure-login/secure-log
 import { SecureCodeComponent } from './Components/Login/secure-code/secure-code.component';
 import { PurchasesComponent } from './Pages/purchases/purchases.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
